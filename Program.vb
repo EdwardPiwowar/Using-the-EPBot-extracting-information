@@ -74,11 +74,12 @@ Module Program
                 .conventions(1, "Blackwood 1430") = True
                 .conventions(0, "Blackwood without K And Q") = False
                 .conventions(1, "Blackwood without K And Q") = False
-
                 'set hand
                 '.new_hand(k, hand(k).suit, dealer, vulnerable)
                 ''set the entire auction
                 .set_arr_bids(arr_bids)
+                Console.WriteLine(.get_str_bidding)
+                Console.WriteLine("")
                 Console.WriteLine("Player " & k)
                 For n = 0 To 3
                     Console.WriteLine("Position " & n)
@@ -109,13 +110,7 @@ Module Program
                     info = .info_feature((asker + 2) Mod 4)
                     Console.WriteLine("A=" & info(406))
                     Console.WriteLine("K=" & info(407))
-
-                    If trump <> 4 Then
-                        honors = .info_honors((asker + 2) Mod 4)
-                        Console.WriteLine("Q=" & (honors(trump) And 4) \ 4)
-                    End If
-                    '-Next DLL 25 simple
-                    'Console.WriteLine("Q=" & info(319)) '-1 - no trump Q, 0 not set, 1 - trump Q 
+                    Console.WriteLine("Q=" & info(319)) '-1 - no trump Q, 0 not set, 1 - trump Q 
                 End If
 
                 Console.WriteLine("")
